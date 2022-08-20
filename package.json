@@ -1,0 +1,27 @@
+{
+  "name": "whatsapp-bot",
+  "version": "1.0.0",
+  "description": "A chatbox to make your life easier",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "whatsapp",
+    "chatbot",
+    "bot"
+  ],
+  "author": "Shahnawaz Hussain",
+  "license": "ISC",
+  "dependencies": {
+    "whatsapp-web.js": "^1.17.1",
+    "request": "^2.88.2",
+    "translate-google": "^1.5.0",
+    "ytdl-core": "^4.11.0",
+    "mathjs": "^11.0.1",
+    "express": "^4.18.1",
+    "socket.io": "^4.5.1",
+    "googlethis": "^1.3.0",
+    "qrcode-terminal": "0.12.0"
+  }
+}

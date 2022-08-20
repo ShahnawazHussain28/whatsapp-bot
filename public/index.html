@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Engine</title>
+    <script src="https://cdn.socket.io/4.5.0/socket.io.min.js" integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>  
+    <script src="script.js" defer></script>
+    <style>
+        *{
+            font-family: sans-serif;
+        }
+        body{
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1{
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 50px;
+            padding: 20px 0;
+            color: white;
+            background-color: #555;
+            width: 100%;
+        }
+        canvas{
+            border: 10px solid black;
+            width: 300px;
+            height: 300px;
+            box-shadow: 0 -30px 0 black;
+        }
+        #qrtext{
+            width: 100%;
+            text-align: center;
+            color: white;
+            z-index: 5;
+        }
+        ul{
+            padding: 0;
+            margin: 10px 0;
+        }
+        ul li{
+            list-style: none;
+            background-color: rgb(170, 193, 237);
+            padding: 7px 20px;
+            margin: 5px 0;
+            border-radius: 100px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>WhatsApp-Bot by Shahnawaz Hussain</h1>
+    <span id="qrtext">QR CODE</span>
+    <canvas id="qrimage" alt="{QRCODE IMAGE}"></canvas>
+    <ul id="msg">
+    </ul>
+</body>
+</html>
