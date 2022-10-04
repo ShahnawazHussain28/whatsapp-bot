@@ -272,7 +272,7 @@ async function sendMusicLink(query, id){
 
 async function downloadSong(query, id){
     const outputpath = 'files/';
-    const format = '.ogg';
+    const format = '.mp3';
     let reply = "";
     let url = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${query}&type=video&key=${process.env.YT_DATA_API_KEY}`
     request({
@@ -291,15 +291,11 @@ async function downloadSong(query, id){
             let fileName = res.videoDetails.title.substring(0, 70).replace(/\s/g, '_')
             let filepath = outputpath + fileName + format;
             let title = res.videoDetails.title;
-            console.log(filepath)
             let artist = res.videoDetails.author.name;
             const video = ytdl(ytLink,{ quality: 'highestaudio', format: 'mp3' });
-            console.log("downloading")
             video.pipe(fs.createWriteStream(filepath))
             video.on('end', () => {
-                console.log("writestream")
                 let audMedia = MessageMedia.fromFilePath(filepath.replace(/\\/g, '/'));
-                console.log("Created vidmeadia")
                 sendMusic(audMedia, id, title, artist, ytLink);
             })
         } catch (e) {
