@@ -14,6 +14,10 @@ const io = require("socket.io")(server)
 const google = require("googlethis")
 app.use(express.json())
 app.use(express.static(path.join(__dirname, 'public')));
+app.get('/', (req, res) => {
+    res.status(200).sendFile("public/index.html");
+})
+
 
 
 const client = new Client({
