@@ -9,7 +9,7 @@ const math = require("mathjs")
 const path = require("path")
 const express = require("express")
 const app = express()
-const server = app.listen(process.env.PORT || 5000, () => console.log("Listening at port: "+5000))
+const server = app.listen(process.env.PORT || 5000, () => console.log("Listening at port: "+process.env.PORT || 5000))
 const io = require("socket.io")(server)
 const google = require("googlethis")
 app.use(express.json())
@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
 
 const client = new Client({
     authStrategy: new LocalAuth(),
-    puppeteer: { headless: true }
+    puppeteer: { headless: true, args: ['--no-sandbox','--disable-setuid-sandbox']}
 });
 
 client.initialize();
